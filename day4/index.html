@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Toolkit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo-container">
+            <img src="https://ucsc.cmb.ac.lk/new-site/wp-content/themes/university/images/ucsc-logo.png" alt="UCSC Logo" class="ucsc-logo">
+            <div class="nav-logo">Student Toolkit</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" id="nav-idea">Idea Board</a></li>
+            <li><a href="#" id="nav-gpa" class="active">GPA Calculator</a></li>
+            <li><a href="#" id="nav-timer">Study Timer</a></li>
+            <li class="theme-toggle-container">
+                <label class="theme-switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="toggle-label">Dark Mode</span>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar fade-in" style="animation-delay: 0.2s;">
+            <h3>Upcoming Events</h3>
+            <ul class="event-list">
+                <li>
+                    <span class="event-date">Oct 15</span>
+                    <span class="event-name">Midterm Exams</span>
+                </li>
+                <li>
+                    <span class="event-date">Oct 22</span>
+                    <span class="event-name">Project Submission</span>
+                </li>
+                <li>
+                    <span class="event-date">Nov 05</span>
+                    <span class="event-name">Study Group Meetup</span>
+                </li>
+                <li>
+                    <span class="event-date">Nov 12</span>
+                    <span class="event-name">Career Fair</span>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-content fade-in" style="animation-delay: 0.4s;">
+            <!-- Idea Board Section -->
+            <section id="idea-section" class="tool-section hidden">
+                <h2>Group Idea Board</h2>
+                <p>Collaborate and share your project ideas with the team.</p>
+                
+                <div class="idea-controls">
+                    <input type="text" id="idea-input" placeholder="Enter your idea here..." />
+                    <button id="add-idea-btn" class="btn-primary">Add Idea</button>
+                </div>
+
+                <div class="ideas-display">
+                    <div class="category-group">
+                        <h3 class="category-header">Submitted Ideas</h3>
+                        <ul id="idea-list" class="idea-list-items">
+                            <!-- All ideas will be added here -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GPA Calculator Section -->
+            <section id="gpa-section" class="tool-section">
+                <h2>GPA Calculator</h2>
+                <p>Calculate your semester GPA by adding your courses and grades below.</p>
+                
+                <div id="course-list">
+                    <div class="course-row header">
+                        <span>Course Name</span>
+                        <span>Credits</span>
+                        <span>Grade</span>
+                        <span></span>
+                    </div>
+                    <!-- Rows will be added here via JS -->
+                </div>
+                
+                <div class="gpa-actions">
+                    <button id="add-course" class="btn-secondary">+ Add Course</button>
+                    <button id="calculate-gpa" class="btn-primary">Calculate GPA</button>
+                </div>
+
+                <div id="gpa-result" class="result-card hidden">
+                    <h3>Your GPA: <span id="gpa-value">0.00</span></h3>
+                    <p id="gpa-message"></p>
+                </div>
+            </section>
+
+            <!-- Study Timer Section -->
+            <section id="timer-section" class="tool-section hidden">
+                <h2>Study Timer</h2>
+                <p>Stay focused with a Pomodoro-style study timer.</p>
+                
+                <div class="timer-display">
+                    <div class="timer-circle">
+                        <span id="time-left">25:00</span>
+                    </div>
+                </div>
+
+                <div class="timer-controls">
+                    <button id="timer-start" class="btn-primary">Start</button>
+                    <button id="timer-pause" class="btn-secondary">Pause</button>
+                    <button id="timer-reset" class="btn-danger">Reset</button>
+                    <button id="timer-test-sound" class="btn-secondary" style="margin-left: 10px; opacity: 0.7;">🔔 Test Sound</button>
+                </div>
+
+                <div class="timer-settings">
+                    <button class="timer-type active" data-time="25">Study (25m)</button>
+                    <button class="timer-type" data-time="5">Short Break (5m)</button>
+                    <button class="timer-type" data-time="15">Long Break (15m)</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
